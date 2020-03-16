@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Content, Row, Col, Box, Button } from "adminlte-2-react";
 
-export default class Reservas extends Component {
+export default class Contatos extends Component {
   state = {};
 
   render() {
     return (
       <Content
-        title="Reservas"
-        subTitle="Projeto Saboroso reservas"
-        browserTitle="Reservas"
+        title="Contatos"
+        subTitle="Projeto Saboroso contatos"
+        browserTitle="Contatos"
       >
         <Row>
           <Col xs={6}>
@@ -20,7 +20,7 @@ export default class Reservas extends Component {
               collapsable
               footer={<Button type="danger" text="Danger Button" />}
             >
-              Aqui inserir um calendário com as datas preenchidas
+              Contatos
             </Box>
           </Col>
           <Col xs={6}>
