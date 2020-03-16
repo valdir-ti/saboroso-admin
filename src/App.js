@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import AdminLTE, { Sidebar, Footer } from "adminlte-2-react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Reservas from "./components/Reservas/index";
+import Menus from "./components/Menus/index";
+
+const { Item } = Sidebar;
+
+class App extends Component {
+  sidebar = [
+    <Item key="reservas" text="Reservas" to="/reservas" />,
+    <Item key="menus" text="Menus" to="/menus" />
+  ];
+
+  render() {
+    return (
+      <AdminLTE
+        title={["Projeto", "Saboroso"]}
+        titleShort={["Pj", "Sb"]}
+        theme="purple"
+        sidebar={this.sidebar}
+      >
+        <Reservas path="/reservas" />
+        <Menus path="/menus" />
+
+        <Footer
+          children="&copy; Restaurante Saboroso - 2020"
+          includeVersionInfo={false}
+        />
+      </AdminLTE>
+    );
+  }
 }
 
 export default App;
